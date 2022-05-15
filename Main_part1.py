@@ -21,8 +21,9 @@ def check_cycle (element):
         return True
     else: 
         return False
+    
+    
 app = FastAPI()
-
 
 @app.post("/check_cycle")
 def endpoint(element: dict [str, list[int]] ):
