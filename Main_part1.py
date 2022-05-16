@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-
+import uvicorn
 from typing import Dict, List
 
 
@@ -31,6 +31,9 @@ def endpoint(element: dict [str, list[int]] ):
     for i in element.keys():
         result[i] = [element[i], check_cycle(element[i])]
     return result
+if __name__ == "__main__":
+    uvicorn.run(app, port=8000)
+
 # to test the code 
 """{
   "list1": [
